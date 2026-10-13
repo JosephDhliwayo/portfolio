@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pricing · Joseph Dhliwayo</title>
+<meta name="description" content="Hourly rate and website, web app and mobile app packages from Joseph Dhliwayo.">
+<meta name="theme-color" content="#0b0d10">
+<script>
+  // Set the theme before paint so there is no flash; skip the dock intro after the first page.
+  (function () {
+    var d = document.documentElement, t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    d.setAttribute('data-theme', t);
+    try { if (sessionStorage.getItem('dock')) d.classList.add('dock-seen'); sessionStorage.setItem('dock', 1); } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <main class="grid">
+
+    <section class="tile page-head">
+      <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">
+        <span class="knob">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </span>
+      </button>
+      <div class="label">Pricing</div>
+      <h1 data-split>Clear prices, no surprises.</h1>
+      <p>Pick a package or book hours as you need them. Every project starts with a free call and a fixed written quote.</p>
+    </section>
+
+    <!-- EDIT: all prices on this page are examples. Set your own. -->
+    <section class="tile hourly">
+      <div class="label" style="color:var(--fg)">Hourly rate</div>
+      <div class="price">$<span data-count="20">20</span><small>/hr</small></div>
+      <p>For fixes, new features and ongoing work. Book in flexible sprints and pay only for the hours used.</p>
+      <div class="cta-actions" style="margin-top:auto">
+        <a class="btn" href="/contact">Book hours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </section>
+
+    <section class="tile steps">
+      <div class="label">How it works</div>
+      <ol>
+        <li><b>Free call</b><span>We talk through what you need and who it's for.</span></li>
+        <li><b>Fixed quote</b><span>You get a written scope, price and timeline.</span></li>
+        <li><b>Build &amp; review</b><span>You see progress on a live preview link as I build.</span></li>
+        <li><b>Launch</b><span>I put it online on your domain and show you how to use it.</span></li>
+      </ol>
+    </section>
+
+    <div class="section-label"><span class="label">Packages</span></div>
+
+    <section class="tile plan">
+      <span class="from">From</span>
+      <div class="amount">$<span data-count="150">150</span></div>
+      <h2>Landing page</h2>
+      <p>One page that tells people what you do and how to reach you.</p>
+      <ul>
+        <li>One-page responsive site</li>
+        <li>WhatsApp and contact buttons</li>
+        <li>Hosting setup on Vercel</li>
+        <li>Basic SEO and social preview</li>
+      </ul>
+      <a class="btn ghost" href="/contact">Get started</a>
+    </section>
+
+    <section class="tile plan pop">
+      <span class="tag">Most popular</span>
+      <span class="from">From</span>
+      <div class="amount">$<span data-count="400">400</span></div>
+      <h2>Business website</h2>
+      <p>A multi-page site for a company, school or shop.</p>
+      <ul>
+        <li>Up to 6 pages</li>
+        <li>Services, gallery and quote forms</li>
+        <li>Custom domain and email setup</li>
+        <li>Google Search setup</li>
+      </ul>
+      <a class="btn" href="/contact">Get started</a>
+    </section>
+
+    <section class="tile plan">
+      <span class="from">From</span>
+      <div class="amount">$<span data-count="1200">1200</span></div>
+      <h2>Web app or system</h2>
+      <p>School management, POS, inventory, bookings or admin dashboards.</p>
+      <ul>
+        <li>User logins and roles</li>
+        <li>Database and reports</li>
+        <li>EcoCash or card payments</li>
+        <li>Training and handover</li>
+      </ul>
+      <a class="btn ghost" href="/contact">Get started</a>
+    </section>
+
+    <section class="tile plan">
+      <span class="from">From</span>
+      <div class="amount">$<span data-count="2500">2500</span></div>
+      <h2>Mobile app</h2>
+      <p>An iOS and Android app built with React Native, like Pekugara.</p>
+      <ul>
+        <li>One codebase for iOS and Android</li>
+        <li>Chat, push notifications, payments</li>
+        <li>App Store and Play Store release</li>
+        <li>Updates without a new release</li>
+      </ul>
+      <a class="btn ghost" href="/contact">Get started</a>
+    </section>
+
+    <section class="tile cta">
+      <div>
+        <div class="label">Not sure what you need?</div>
+        <h2>Ask me and I'll recommend a package.</h2>
+      </div>
+      <div class="cta-actions">
+        <a class="btn ghost" href="https://wa.me/12035034159" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="/contact">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+  <footer>© <span id="yr">2026</span> Joseph Dhliwayo · Hamden, CT</footer>
+</div>
+
+<nav class="dock" aria-label="Pages">
+  <a href="/pricing" data-page="pricing" class="active" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Pricing
+  </a>
+  <a href="/projects" data-page="projects">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Projects
+  </a>
+  <a href="/" data-page="home" class="home">
+    <span class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg></span>Home
+  </a>
+  <a href="/contact" data-page="contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Contact
+  </a>
+  <a href="/skills" data-page="skills">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>Skills
+  </a>
+</nav>
+
+<script src="main.js"></script>
+</body>
+</html>
