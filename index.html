@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joseph Dhliwayo</title>
+<meta name="description" content="Joseph Dhliwayo is a full stack developer and the founder of Pekugara. He builds mobile apps, websites and business systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 12-column bento grid of dark tiles; one bright accent (teal) for status + labels. */
+:root {
+  --bg: #0b0d10;
+  --tile: #12151a;
+  --tile-2: #181c22;
+  --line: #22272f;
+  --fg: #f2f4f7;
+  --muted: #9aa3ae;
+  --accent: #2dd4bf;
+  --live: #22c55e;
+  --display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r: 28px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.55 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 2.5vw, 36px);
+  padding-block: clamp(16px, 3vw, 56px);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+.tile {
+  background: var(--tile);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: clamp(22px, 2.6vw, 44px);
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, transform .25s;
+}
+a.tile:hover { border-color: #39414c; transform: translateY(-2px); }
+
+.label {
+  font: 600 13px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.arrow {
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  flex: none;
+  transition: background .2s, color .2s;
+}
+.arrow svg { width: 18px; height: 18px; }
+a:hover .arrow { background: var(--fg); color: var(--bg); }
+
+/* Row 1 */
+.hero { grid-column: span 5; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
+.hero h1 { font: 800 clamp(34px, 3.6vw, 54px)/1.08 var(--display); letter-spacing: -.02em; margin: 0 0 18px; text-wrap: balance; }
+.hero p { font-size: clamp(17px, 1.4vw, 22px); margin: 0; max-width: 34ch; color: #d6dbe1; }
+.hero p a { border-bottom: 2px solid var(--fg); }
+.status { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 17px; }
+.dot { width: 11px; height: 11px; flex: none; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 0 rgba(34,197,94,.6); animation: pulse 2.4s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
+
+.proj-sm { grid-column: span 2; padding: 12px; display: flex; }
+.shot {
+  flex: 1; border-radius: 18px; min-height: 300px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 18px;
+  background: var(--tile-2);
+}
+.shot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,10,13,.95) 10%, rgba(8,10,13,0) 62%); }
+.shot > * { position: relative; z-index: 1; }
+.shot > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top left; z-index: 0; transition: transform .6s; }
+a:hover .shot > img { transform: scale(1.04); }
+.shot .kind { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.shot .name { font-weight: 700; font-size: 17px; display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.shot .name span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shot .name svg { width: 14px; height: 14px; flex: none; }
+
+.socials { grid-column: span 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-content: center; gap: 14px; padding: 22px; }
+.icon-btn {
+  width: 100%; min-width: 0; aspect-ratio: 1 / 1.15; max-width: 100%;
+  border-radius: 20px; background: var(--tile-2); border: 1px solid var(--line);
+  display: grid; place-items: center;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.icon-btn:hover { background: #1f242c; border-color: #3a424d; transform: translateY(-2px); }
+.icon-btn svg { width: 30px; height: 30px; }
+.c-teal { color: var(--accent); }
+.c-green { color: var(--live); }
+
+/* Row 2 */
+.photo { grid-column: span 3; padding: 0; min-height: 380px; margin: 0; background: linear-gradient(160deg, #2a2f36, #121417); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+.photo .initials { position: absolute; inset: 0; display: grid; place-items: center; font: 800 96px/1 var(--display); color: #2c323a; letter-spacing: -.04em; }
+.photo .cap { position: absolute; left: 24px; bottom: 22px; z-index: 1; }
+.photo .cap b { display: block; font: 800 19px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; }
+.photo .cap span { color: #c3c9d1; font-size: 15px; }
+.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent 45%); }
+
+.about { grid-column: span 4; display: flex; flex-direction: column; gap: 28px; border-bottom-color: #2a6f69; }
+.about h2 { font: 800 clamp(26px, 2.4vw, 36px)/1.22 var(--display); letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.row-end { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 600; font-size: 18px; }
+
+.feature { grid-column: span 5; padding: 12px; display: flex; }
+.feature .shot { min-height: 360px; padding: 26px; }
+.feature .badge {
+  position: absolute; top: 26px; left: 26px; z-index: 1;
+  background: rgba(10,14,18,.88); border: 1px solid #2b6d68; color: var(--accent);
+  font: 700 13px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+  padding: 10px 16px; border-radius: 999px;
+}
+.feature .name { font-size: clamp(20px, 1.9vw, 28px); font-weight: 800; }
+.feature .name span { white-space: normal; }
+.feature .arrow { background: var(--fg); color: var(--bg); width: 64px; height: 64px; border: 0; }
+
+/* Row 3 */
+.rates { grid-column: span 3; display: flex; flex-direction: column; gap: 18px; }
+.price { font: 800 clamp(54px, 5vw, 72px)/1 var(--display); letter-spacing: -.03em; margin-top: 18px; }
+.price small { font-size: 22px; font-weight: 600; letter-spacing: 0; }
+.rates p { margin: 0; font-size: 18px; color: #d6dbe1; }
+.rates .row-end { justify-content: flex-end; }
+
+.stack { grid-column: span 4; display: flex; flex-direction: column; gap: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font: 500 14px/1 var(--mono); padding: 10px 14px; border-radius: 999px; background: var(--tile-2); border: 1px solid var(--line); color: #d6dbe1; }
+
+.exp { grid-column: span 5; display: flex; flex-direction: column; gap: 22px; }
+.timeline { display: grid; margin: 0; padding: 0; list-style: none; }
+.timeline li { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+.timeline li:first-child { border-top: 0; padding-top: 4px; }
+.timeline b { font-weight: 700; font-size: 17px; }
+.timeline span { color: var(--muted); font-size: 15px; }
+.timeline time { font: 500 14px/1.6 var(--mono); color: var(--muted); grid-row: span 2; }
+
+/* Selected work */
+.work-head { grid-column: span 12; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; padding: 24px 4px 4px; }
+.work-head h2 { font: 800 clamp(26px, 2.6vw, 38px)/1.1 var(--display); letter-spacing: -.02em; margin: 10px 0 0; }
+.work-head p { margin: 0; color: var(--muted); max-width: 46ch; }
+.work { grid-column: span 3; padding: 10px; display: flex; flex-direction: column; }
+.thumb { aspect-ratio: 16 / 10; max-width: 100%; border-radius: 18px; overflow: hidden; position: relative; background: var(--tile-2); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s; }
+a.work:hover .thumb img { transform: scale(1.04); }
+.thumb.ph { display: grid; place-items: center; }
+.thumb .mono { font: 800 44px/1 var(--display); color: rgba(255,255,255,.2); letter-spacing: -.03em; }
+.ph-a { background: radial-gradient(120% 80% at 20% 10%, #1f6f8b 0%, #12313d 45%, #0d1418 100%); }
+.ph-b { background: radial-gradient(120% 80% at 80% 15%, #b9894f 0%, #4a3826 45%, #15110d 100%); }
+.ph-c { background: radial-gradient(110% 90% at 70% 20%, #3b5bdb 0%, #1b2a5e 45%, #0c1020 100%); }
+.ph-d { background: radial-gradient(120% 90% at 30% 20%, #1d7a5a 0%, #12352a 45%, #0b1612 100%); }
+.work .meta { padding: 16px 10px 10px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.work .kind { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.work h3 { margin: 0; font: 700 18px/1.3 var(--display); display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+.work h3 svg { width: 14px; height: 14px; flex: none; margin-top: 5px; }
+.work p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.work .tags { font: 500 12.5px/1.5 var(--mono); color: #7f8893; margin-top: auto; padding-top: 6px; }
+.private { font: 600 10.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; flex: none; }
+
+.cta { grid-column: span 12; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; background: linear-gradient(120deg, #11201f, var(--tile) 60%); }
+.cta h2 { font: 800 clamp(26px, 3vw, 44px)/1.1 var(--display); letter-spacing: -.02em; margin: 8px 0 0; text-wrap: balance; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--fg); color: var(--bg); font-weight: 700; padding: 16px 26px; border-radius: 999px; transition: transform .2s; }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid #3a424d; }
+.btn:hover { transform: translateY(-2px); }
+.btn svg { width: 16px; height: 16px; }
+footer { text-align: center; color: var(--muted); font-size: 14px; padding-top: 28px; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .hero { grid-column: span 12; }
+  .proj-sm { grid-column: span 4; }
+  .socials { grid-column: span 4; }
+  .photo { grid-column: span 4; }
+  .about { grid-column: span 8; }
+  .feature { grid-column: span 8; }
+  .rates { grid-column: span 4; }
+  .stack { grid-column: span 6; }
+  .exp { grid-column: span 6; }
+  .work { grid-column: span 4; }
+}
+@media (max-width: 900px) {
+  .work { grid-column: span 6; }
+}
+@media (max-width: 760px) {
+  .grid { gap: 14px; }
+  .hero, .proj-sm, .socials, .photo, .about, .feature, .rates, .stack, .exp, .work { grid-column: span 12; }
+  .proj-sm .shot { min-height: 240px; }
+  .icon-btn { aspect-ratio: 1 / 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="grid">
+
+    <!-- HERO -->
+    <section class="tile hero">
+      <div>
+        <h1>Hi, I'm Joseph Dhliwayo —</h1>
+        <p>Full Stack Developer and founder of <a href="https://www.pekugara.com" target="_blank" rel="noopener">Pekugara</a>, based in Hamden, CT.</p>
+      </div>
+      <div class="status"><span class="dot"></span> Available for freelance projects &amp; full-time roles</div>
+    </section>
+
+    <!-- SMALL PROJECT 1 -->
+    <a class="tile proj-sm" href="https://wellstar-drilling.vercel.app" target="_blank" rel="noopener">
+      <div class="shot">
+        <img src="images/wellstar.png" alt="Wellstar Drilling website">
+        <div class="kind">Business + Admin</div>
+        <div class="name"><span>Wellstar Drilling</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+      </div>
+    </a>
+
+    <!-- SMALL PROJECT 2 -->
+    <a class="tile proj-sm" href="https://the-frontline.vercel.app" target="_blank" rel="noopener">
+      <div class="shot">
+        <img src="images/frontline.png" alt="The Frontline news website">
+        <div class="kind">News &amp; Media</div>
+        <div class="name"><span>The Frontline</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+      </div>
+    </a>
+
+    <!-- SOCIALS — EDIT: add your LinkedIn URL -->
+    <nav class="tile socials" aria-label="Contact links">
+      <a class="icon-btn" href="https://github.com/JosephDhliwayo" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+      <a class="icon-btn c-teal" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a class="icon-btn c-green" href="https://wa.me/12035034159" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+      </a>
+      <a class="icon-btn" href="tel:+12035034159" aria-label="Call (203) 503-4159">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      </a>
+      <a class="icon-btn" href="mailto:mrdhliwayojoseph@gmail.com" aria-label="Email mrdhliwayojoseph@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      </a>
+      <a class="icon-btn" href="cv.pdf" download aria-label="Download CV">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </a>
+    </nav>
+
+    <!-- PHOTO — save your photo as photo.jpg next to this file -->
+    <figure class="tile photo">
+      <div class="initials">JD</div>
+      <img src="photo.jpg" alt="Joseph Dhliwayo" onerror="this.remove()">
+      <figcaption class="cap"><b>Joseph Dhliwayo</b><span>Full Stack Developer</span></figcaption>
+    </figure>
+
+    <!-- ABOUT -->
+    <a class="tile about" href="#experience">
+      <div class="label">About</div>
+      <h2>I build mobile apps, websites and business systems, from the database to the app store.</h2>
+      <div class="row-end">Read background &amp; story <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+
+    <!-- FEATURED PROJECT -->
+    <a class="tile feature" href="https://www.pekugara.com" target="_blank" rel="noopener">
+      <div class="shot">
+        <img src="images/pekugara.png" alt="Pekugara website">
+        <span class="badge">Projects · 15+ built</span>
+        <div class="kind">Proptech · iOS &amp; Android</div>
+        <div class="name"><span>Pekugara – Student Housing App</span><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </div>
+    </a>
+
+    <!-- RATES — EDIT: set your real rate -->
+    <a class="tile rates" href="#contact">
+      <div class="label" style="color:var(--fg)">Rates &amp; Pricing</div>
+      <div class="price">$20<small>/hr</small></div>
+      <p>Websites from $150.<br>Flexible hourly sprints.</p>
+      <div class="row-end"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+
+    <!-- TECH STACK -->
+    <section class="tile stack">
+      <div class="label">Tech stack</div>
+      <div class="chips">
+        <span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Next.js</span>
+        <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span>
+        <span class="chip">Express</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span>
+        <span class="chip">Prisma</span><span class="chip">Drizzle</span><span class="chip">SQLite</span>
+        <span class="chip">Tailwind CSS</span><span class="chip">Vercel</span><span class="chip">EcoCash / Pesepay</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="tile exp" id="experience">
+      <div class="label">Experience &amp; Education</div>
+      <ol class="timeline">
+        <li><b>Founder &amp; Lead Developer</b><time>Now</time><span>Pekugara · iOS, Android &amp; web</span></li>
+        <li><b>Freelance Full Stack Developer</b><time>Now</time><span>Websites and systems for businesses in Zimbabwe &amp; the US</span></li>
+        <li><b>MSc Cybersecurity</b><time>In progress</time><span>Hamden, CT, USA</span></li>
+        <li><b>BSc Hons Information Systems</b><time>Completed</time><span>Zimbabwe</span></li>
+      </ol>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <header class="work-head" id="work">
+      <div>
+        <div class="label">Selected work</div>
+        <h2>More projects I've built</h2>
+      </div>
+      <p>Websites, school and business systems, and apps for clients across Zimbabwe and the US.</p>
+    </header>
+
+    <a class="tile work" href="https://absolute-energy-website.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/absolute.png" alt="Absolute Energy website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Energy</span><h3>Absolute Energy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>Company website for an energy provider.</p><span class="tags">Next.js · Tailwind</span></div>
+    </a>
+    <a class="tile work" href="https://daystar-energy.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/daystar.png" alt="Daystar Energy website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Clean energy</span><h3>Daystar Energy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>Website for a clean energy company.</p><span class="tags">Next.js · Tailwind</span></div>
+    </a>
+    <a class="tile work" href="https://hatchgrow-poultry.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/hatchgrow.png" alt="HatchGrow Poultry website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Agriculture</span><h3>HatchGrow Poultry<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>Custom egg hatching and day-old chicks in Chiredzi.</p><span class="tags">Next.js</span></div>
+    </a>
+    <a class="tile work" href="https://high-mount-college.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/highmount.png" alt="High Mount College website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Education</span><h3>High Mount College<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>ZIMSEC, Cambridge, ACCA and short courses in Harare.</p><span class="tags">HTML · CSS · JS</span></div>
+    </a>
+    <a class="tile work" href="https://halo-mirrors.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/halo.png" alt="Halo Mirrors website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Retail</span><h3>Halo Mirrors<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>Mirrors cut and installed in Harare, with WhatsApp quotes.</p><span class="tags">HTML · CSS · JS</span></div>
+    </a>
+    <a class="tile work" href="https://creative-collective-co.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/creative.png" alt="Creative Collective Co. website" loading="lazy"></div>
+      <div class="meta"><span class="kind">Agency</span><h3>Creative Collective Co.<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>New York creative and digital marketing studio.</p><span class="tags">HTML · CSS · JS</span></div>
+    </a>
+    <a class="tile work" href="https://money-saver-appliances.vercel.app" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/moneysaver.png" alt="Money Saver Appliances website" loading="lazy"></div>
+      <div class="meta"><span class="kind">E-commerce</span><h3>Money Saver Appliances<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></h3><p>Appliance store at prices that make sense.</p><span class="tags">Next.js</span></div>
+    </a>
+    <div class="tile work">
+      <div class="thumb ph ph-c"><span class="mono">SMS</span></div>
+      <div class="meta"><span class="kind">School SaaS</span><h3>Melbourne Academy SMS<span class="private">Private</span></h3><p>Students, attendance, grades and fees for a school in Chiredzi.</p><span class="tags">Next.js · Prisma</span></div>
+    </div>
+    <div class="tile work">
+      <div class="thumb ph ph-b"><span class="mono">POS</span></div>
+      <div class="meta"><span class="kind">POS &amp; Inventory</span><h3>Gata Gadgets<span class="private">Private</span></h3><p>Receipts, inventory and sales, stock and profit reports.</p><span class="tags">Node.js · Express · SQLite</span></div>
+    </div>
+    <div class="tile work">
+      <div class="thumb ph ph-d"><span class="mono">$↔</span></div>
+      <div class="meta"><span class="kind">Fintech bot</span><h3>WhatsApp Remit Bot<span class="private">In dev</span></h3><p>WhatsApp chatbot for PayPal and EcoCash exchange quotes.</p><span class="tags">Next.js · Prisma</span></div>
+    </div>
+    <div class="tile work">
+      <div class="thumb ph ph-a"><span class="mono">FS</span></div>
+      <div class="meta"><span class="kind">Printing &amp; Branding</span><h3>Flux Slym</h3><p>Printing and branding company with two branches in Harare.</p><span class="tags">HTML · CSS · JS</span></div>
+    </div>
+    <div class="tile work">
+      <div class="thumb ph ph-c"><span class="mono">KT</span></div>
+      <div class="meta"><span class="kind">Tech services</span><h3>Kuvaka Tech</h3><p>Digital solutions for African businesses, schools and farms.</p><span class="tags">HTML · CSS · JS</span></div>
+    </div>
+
+    <!-- CTA -->
+    <section class="tile cta" id="contact">
+      <div>
+        <div class="label">Have a project in mind?</div>
+        <h2>Let's build something together.</h2>
+      </div>
+      <div class="cta-actions">
+        <a class="btn ghost" href="https://wa.me/12035034159" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="mailto:mrdhliwayojoseph@gmail.com">Email me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+  <footer>© <span id="yr">2026</span> Joseph Dhliwayo · Hamden, CT</footer>
+</div>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
