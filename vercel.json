@@ -1,3 +1,11 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "www.codewithjoe.online" }],
+      "destination": "https://codewithjoe.online/:path",
+      "permanent": true
+    }
+  ]
 }
