@@ -517,3 +517,13 @@ a:hover .mini-grid img:nth-child(odd) { transform: translateY(-4px) rotate(-1deg
 a:hover .mini-grid img:nth-child(even) { transform: translateY(4px) rotate(1deg); }
 .c-icon.c-green { color: var(--live); }
 .c-icon.c-teal { color: var(--accent); }
+
+/* Projects: three wide cards in a row; mixed-width cards in the last group */
+.proj-sm.wide { grid-column: span 4; }
+.work.third { grid-column: span 4; }
+.work.half { grid-column: span 6; }
+.work.half .thumb { aspect-ratio: 16 / 6; }
+@media (max-width: 760px) {
+  .proj-sm.wide, .work.third, .work.half { grid-column: span 12; }
+  .work.half .thumb { aspect-ratio: 16 / 9; }
+}
