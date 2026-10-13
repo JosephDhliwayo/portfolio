@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joseph Dhliwayo – CV</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.45in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 10pt/1.5 "Segoe UI", "Noto Sans", Arial, sans-serif; color: #3d4451; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: #1d4ed8; text-decoration: none; }
+  .blue { color: #1d4ed8; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding-bottom: 12px; border-bottom: 3px solid #1d4ed8; }
+  h1 { margin: 0; font-size: 24pt; line-height: 1.1; color: #111827; letter-spacing: -.01em; }
+  .loc { font-size: 9.5pt; color: #6b7280; margin: 4px 0 2px 4px; }
+  .role { font-weight: 700; color: #1d4ed8; font-size: 11pt; margin-left: 4px; }
+  .contact { text-align: right; font-size: 9.5pt; line-height: 1.75; color: #4b5563; }
+
+  .summary { margin: 18px 0 16px; background: #eff3fe; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 12px 18px; font-size: 10pt; line-height: 1.6; }
+
+  section { display: grid; grid-template-columns: 1.95in 1fr; gap: 0 18px; border-top: 1px solid #d1d5db; padding: 14px 0; break-inside: avoid; }
+  .label { font-size: 7.5pt; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: #1d4ed8; padding-top: 3px; }
+  .job + .job { margin-top: 14px; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; }
+  .job-head b { color: #111827; font-size: 10.5pt; }
+  .job-head span { color: #6b7280; font-size: 9pt; white-space: nowrap; }
+  .org { color: #1d4ed8; font-weight: 700; font-size: 8.8pt; margin: 1px 0 5px; }
+  ul { margin: 0; padding-left: 16px; }
+  li { margin: 2px 0; font-size: 9.6pt; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { border: 1px solid #d1d5db; border-top: 3px solid #1d4ed8; border-radius: 8px; padding: 10px 13px; break-inside: avoid; }
+  .card.full { grid-column: 1 / -1; }
+  .card b { color: #111827; font-size: 10.5pt; display: block; }
+  .card .url { font-size: 8.8pt; color: #6b7280; }
+  .card a.url, .card .url a { color: #1d4ed8; }
+  .card p { margin: 5px 0 7px; font-size: 9pt; color: #6b7280; line-height: 1.45; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tags span { background: #eff3fe; color: #1e40af; font-size: 7.6pt; font-weight: 700; padding: 3px 7px; border-radius: 4px; }
+
+  .bars { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; }
+  .bar { display: grid; grid-template-columns: 1.45in 1fr; align-items: center; gap: 8px; font-size: 9.5pt; color: #111827; }
+  .bar i { display: block; height: 5px; border-radius: 3px; background: linear-gradient(90deg, #1d4ed8 var(--v), #e5e7eb var(--v)); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span { border: 1px solid #d1d5db; border-radius: 5px; padding: 3px 9px; font-size: 9pt; }
+
+  .edu + .edu { margin-top: 9px; }
+  .edu b { color: #111827; font-size: 10.3pt; }
+  .edu div { font-size: 9pt; color: #6b7280; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Joseph Dhliwayo</h1>
+    <div class="loc">Hamden, Connecticut, United States</div>
+    <div class="role">Full Stack Developer</div>
+  </div>
+  <div class="contact">
+    <a href="mailto:mrdhliwayojoseph@gmail.com">mrdhliwayojoseph@gmail.com</a><br>
+    <a href="https://codewithjoe.online">codewithjoe.online</a><br>
+    <a href="https://www.linkedin.com/in/joseph-dhliwayo-12b90b17b">linkedin.com/in/joseph-dhliwayo-12b90b17b</a><br>
+    <a href="https://pekugara.com">pekugara.com</a>
+  </div>
+</header>
+
+<div class="summary">
+  Full stack developer and UI designer with hands-on experience designing and building web platforms and mobile
+  applications from the ground up. Founder of Pekugara, a live student accommodation app on the App Store and
+  Google Play, with a strong portfolio of client websites spanning e-commerce, nonprofit, and professional services.
+  Skilled in React Native, Next.js, Supabase, responsive design, branding, design systems, and developer-ready handoff.
+</div>
+
+<section>
+  <div class="label">Experience</div>
+  <div>
+    <div class="job">
+      <div class="job-head"><b>Founder, CEO &amp; Lead Product Designer</b><span>2024 – Present</span></div>
+      <div class="org">Pekugara · Hamden, United States</div>
+      <ul>
+        <li>Designed and built the Pekugara mobile app, including all screens, user flows, branding, icon set, and design system, from concept to live release on the App Store and Google Play</li>
+        <li>Created brand identity: logo, colour palette, typography system, and brand guidelines used consistently across the app, web, and marketing materials</li>
+        <li>Designed onboarding flows, property listing cards, map interfaces, booking screens, and an AI assistant chat UI tailored for a student audience</li>
+        <li>Built the app with React Native (Expo) and Supabase, including real-time chat, push notifications, and EcoCash payments</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><b>Freelance Web Designer &amp; Developer</b><span>2022 – Present</span></div>
+      <div class="org">Global Website Solutions · Remote</div>
+      <ul>
+        <li>Designed and built custom websites and business systems for clients across e-commerce, drilling services, nonprofit ministry, education, and digital agencies</li>
+        <li>Produced wireframes, mockups, and final production designs for desktop and mobile, delivering responsive, accessible, and performance-optimised experiences</li>
+        <li>Created logos, brand guides, and visual identities as part of end-to-end client projects</li>
+        <li>Managed client communication, creative briefs, revision cycles, and final delivery with consistent on-time results</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Education</div>
+  <div>
+    <div class="edu"><b>Master of Science in Cybersecurity</b><div>In progress · Hamden, Connecticut, United States</div></div>
+    <div class="edu"><b>Bachelor of Science Honours in Information Systems</b><div>Completed · Zimbabwe</div></div>
+    <div class="edu"><b>Self-Directed Study: UI/UX Design &amp; Web Development</b><div>Ongoing · Figma, Adobe Suite, React Native, HTML/CSS, accessibility standards</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Language</div>
+  <div class="edu"><b>English</b><div>Fluent, written and spoken</div></div>
+</section>
+
+<section class="page-break">
+  <div class="label">Portfolio</div>
+  <div class="cards">
+    <div class="card">
+      <b>Pekugara</b>
+      <span class="url"><a href="https://pekugara.com">pekugara.com</a> · App Store &amp; Google Play</span>
+      <p>Full product design and development for a student accommodation platform: UI/UX, branding, design system, and mobile app.</p>
+      <div class="tags"><span>Mobile UI</span><span>React Native</span><span>Design System</span></div>
+    </div>
+    <div class="card">
+      <b>Money Saver Appliances</b>
+      <a class="url" href="https://moneysaverappliances.com">moneysaverappliances.com</a>
+      <p>eCommerce website design: product listings, shopping flow, mobile-responsive layouts, and brand visuals.</p>
+      <div class="tags"><span>eCommerce</span><span>Web Design</span><span>Responsive</span></div>
+    </div>
+    <div class="card">
+      <b>Prayer Movement International</b>
+      <a class="url" href="https://prayermovementinternational.org">prayermovementinternational.org</a>
+      <p>Nonprofit ministry website with event promotion, donation flow, and multi-page responsive layout.</p>
+      <div class="tags"><span>Nonprofit</span><span>Web Design</span><span>Responsive</span></div>
+    </div>
+    <div class="card">
+      <b>Wellstar Drilling</b>
+      <a class="url" href="https://wellstardrilling.com">wellstardrilling.com</a>
+      <p>Professional services website with strong visual identity, service pages, and project-focused layout.</p>
+      <div class="tags"><span>B2B</span><span>Web Design</span><span>Branding</span></div>
+    </div>
+    <div class="card">
+      <b>Gata Gadgets</b>
+      <a class="url" href="https://gatagadgets.store">gatagadgets.store</a>
+      <p>Receipts, inventory, and reporting system with staff clock-in and sales, stock, and profit reports.</p>
+      <div class="tags"><span>Web App</span><span>Node.js</span><span>POS</span></div>
+    </div>
+    <div class="card">
+      <b>Global Website Solutions</b>
+      <a class="url" href="https://globalwebsitesolutions.com">globalwebsitesolutions.com</a>
+      <p>Agency website self-designed to demonstrate clean layout, brand presentation, and conversion-focused design.</p>
+      <div class="tags"><span>Agency</span><span>Web Design</span><span>Branding</span></div>
+    </div>
+    <div class="card full">
+      <b>More work</b>
+      <a class="url" href="https://codewithjoe.online/projects">codewithjoe.online/projects</a>
+      <p>Kuvaka Tech, The Frontline news site, Absolute Energy, Daystar Energy, HatchGrow Poultry, High Mount College, Halo Mirrors, Creative Collective Co., and a school management system.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Skills</div>
+  <div class="bars">
+    <div class="bar">Figma / UI Design<i style="--v:90%"></i></div>
+    <div class="bar">Responsive Design<i style="--v:96%"></i></div>
+    <div class="bar">React Native<i style="--v:90%"></i></div>
+    <div class="bar">HTML &amp; CSS<i style="--v:96%"></i></div>
+    <div class="bar">Next.js / React<i style="--v:88%"></i></div>
+    <div class="bar">Branding &amp; Identity<i style="--v:88%"></i></div>
+    <div class="bar">Supabase / PostgreSQL<i style="--v:85%"></i></div>
+    <div class="bar">Mobile UI / UX<i style="--v:92%"></i></div>
+    <div class="bar">Adobe Photoshop<i style="--v:85%"></i></div>
+    <div class="bar">Design Systems<i style="--v:87%"></i></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Tools</div>
+  <div class="chips">
+    <span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>After Effects</span><span>HTML / CSS</span>
+    <span>React Native</span><span>Expo</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span>
+    <span>Supabase</span><span>PostgreSQL</span><span>Git</span><span>Vercel</span><span>Google Docs</span><span>Basecamp</span>
+  </div>
+</section>
+
+
+</body>
+</html>
