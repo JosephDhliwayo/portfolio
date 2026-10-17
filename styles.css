@@ -527,3 +527,9 @@ a:hover .mini-grid img:nth-child(even) { transform: translateY(4px) rotate(1deg)
   .proj-sm.wide, .work.third, .work.half { grid-column: span 12; }
   .work.half .thumb { aspect-ratio: 16 / 9; }
 }
+
+/* Projects: highlight panel beside a featured project */
+.comp.side { grid-column: span 4; }
+@media (max-width: 1200px) {
+  .comp.side { grid-column: span 12; }
+}
