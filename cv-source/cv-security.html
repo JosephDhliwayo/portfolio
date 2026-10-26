@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joseph Dhliwayo – CV (Cybersecurity Engineer)</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.45in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 10pt/1.5 "Segoe UI", "Noto Sans", Arial, sans-serif; color: #3d4451; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: #1d4ed8; text-decoration: none; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding-bottom: 12px; border-bottom: 3px solid #1d4ed8; }
+  h1 { margin: 0; font-size: 24pt; line-height: 1.1; color: #111827; letter-spacing: -.01em; }
+  .loc { font-size: 9.5pt; color: #6b7280; margin: 4px 0 2px 4px; }
+  .role { font-weight: 700; color: #1d4ed8; font-size: 11pt; margin-left: 4px; }
+  .contact { text-align: right; font-size: 9.5pt; line-height: 1.75; color: #4b5563; }
+
+  .summary { margin: 18px 0 16px; background: #eff3fe; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 12px 18px; font-size: 10pt; line-height: 1.6; }
+
+  section { display: grid; grid-template-columns: 1.95in 1fr; gap: 0 18px; border-top: 1px solid #d1d5db; padding: 14px 0; break-inside: avoid; }
+  .label { font-size: 7.5pt; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: #1d4ed8; padding-top: 3px; }
+  .job + .job { margin-top: 14px; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; }
+  .job-head b { color: #111827; font-size: 10.5pt; }
+  .job-head span { color: #6b7280; font-size: 9pt; white-space: nowrap; }
+  .org { color: #1d4ed8; font-weight: 700; font-size: 8.8pt; margin: 1px 0 5px; }
+  ul { margin: 0; padding-left: 16px; }
+  li { margin: 2px 0; font-size: 9.6pt; }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+  .skills b { display: block; color: #111827; font-size: 9.8pt; margin-bottom: 1px; }
+  .skills div { font-size: 9.2pt; line-height: 1.45; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { border: 1px solid #d1d5db; border-top: 3px solid #1d4ed8; border-radius: 8px; padding: 10px 13px; break-inside: avoid; }
+  .card b { color: #111827; font-size: 10.5pt; display: block; }
+  .card .url { font-size: 8.8pt; color: #6b7280; }
+  .card a.url, .card .url a { color: #1d4ed8; }
+  .card p { margin: 5px 0 7px; font-size: 9pt; color: #6b7280; line-height: 1.45; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tags span { background: #eff3fe; color: #1e40af; font-size: 7.6pt; font-weight: 700; padding: 3px 7px; border-radius: 4px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span { border: 1px solid #d1d5db; border-radius: 5px; padding: 3px 9px; font-size: 9pt; }
+
+  .edu + .edu { margin-top: 9px; }
+  .edu b { color: #111827; font-size: 10.3pt; }
+  .edu div { font-size: 9pt; color: #6b7280; }
+  .page-break { break-before: page; }
+  section.flow { break-inside: auto; }
+  .job { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Joseph Dhliwayo</h1>
+    <div class="loc">Hamden, Connecticut, United States</div>
+    <div class="role">Cybersecurity Engineer</div>
+  </div>
+  <div class="contact">
+    <a href="mailto:mrdhliwayojoseph@gmail.com">mrdhliwayojoseph@gmail.com</a><br>
+    <a href="https://codewithjoe.online">codewithjoe.online</a><br>
+    <a href="https://www.linkedin.com/in/joseph-dhliwayo-12b90b17b">linkedin.com/in/joseph-dhliwayo-12b90b17b</a><br>
+    <a href="https://pekugara.com">pekugara.com</a>
+  </div>
+</header>
+
+<div class="summary">
+  Cybersecurity engineer with a background in building and securing production web and mobile applications.
+  Currently completing a Master of Science in Cybersecurity, with a BSc Honours in Information Systems.
+  Hands-on experience securing authentication, payments, APIs and databases for live platforms, including
+  Pekugara, a housing app on the App Store and Google Play. Brings a developer's view of how systems are built,
+  which helps find weaknesses early and fix them at the source.
+</div>
+
+<section>
+  <div class="label">Education</div>
+  <div>
+    <div class="edu"><b>Master of Science in Cybersecurity</b><div>In progress · Hamden, Connecticut, United States</div></div>
+    <div class="edu"><b>Bachelor of Science Honours in Information Systems</b><div>Completed · Zimbabwe</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Language</div>
+  <div class="edu"><b>English</b><div>Fluent, written and spoken</div></div>
+</section>
+
+<section>
+  <div class="label">Security Skills</div>
+  <div class="skills">
+    <div><b>Application security</b>Secure coding, input validation, output encoding, SQL injection and XSS prevention</div>
+    <div><b>Authentication &amp; sessions</b>Password hashing (bcrypt, scrypt), signed tokens, httpOnly and SameSite cookies</div>
+    <div><b>Cryptography</b>AES-256 encryption, HMAC-SHA256 signing, timing-safe comparison, TLS troubleshooting</div>
+    <div><b>Access control</b>PostgreSQL row-level security, role-based access, revocable signed invite links</div>
+    <div><b>API &amp; webhook security</b>Webhook signature verification, schema validation (Zod), secure payment APIs</div>
+    <div><b>Cloud &amp; secrets</b>Secrets management on Vercel, environment separation, isolated test databases</div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="label">Experience</div>
+  <div>
+    <div class="job">
+      <div class="job-head"><b>Founder &amp; Lead Developer</b><span>2024 – Present</span></div>
+      <div class="org">Pekugara · Hamden, United States</div>
+      <ul>
+        <li>Built and secured a housing and rental platform used by renters and landlords across Zimbabwe, live on the App Store and Google Play</li>
+        <li>Secured mobile-money payments (Pesepay / EcoCash) with AES-256-CBC encryption and diagnosed TLS-level issues in a non-standard payment API</li>
+        <li>Wrote PostgreSQL row-level security policies in Supabase so each user can only read and change their own data</li>
+        <li>Built admin verification and moderation tools to vet landlords and remove fraudulent or abusive accounts</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><b>Freelance Web Developer</b><span>2022 – Present</span></div>
+      <div class="org">Global Website Solutions · Remote</div>
+      <ul>
+        <li>Designed and built websites and business systems for clients in the US and Zimbabwe, applying secure-by-default practices on every project</li>
+        <li>Implemented login systems with salted password hashing (bcrypt, scrypt), HMAC-signed sessions checked with timing-safe comparison, and httpOnly, SameSite cookies</li>
+        <li>Prevented injection and cross-site scripting with parameterized SQL queries, Zod schema validation and HTML output escaping</li>
+        <li>Verified HMAC-SHA256 webhook signatures for WhatsApp and EcoCash integrations so forged requests are rejected</li>
+        <li>Built role-based admin access and revocable, time-limited signed invite links for a live radio studio</li>
+        <li>Kept production secrets out of code using Vercel environment variables, and separated test and production databases</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="label">Selected Projects</div>
+  <div class="cards">
+    <div class="card">
+      <b>Pekugara</b>
+      <span class="url"><a href="https://pekugara.com">pekugara.com</a> · App Store &amp; Google Play</span>
+      <p>Housing app with encrypted mobile-money payments, row-level security on user data, and admin verification.</p>
+      <div class="tags"><span>AES-256</span><span>Row-Level Security</span><span>Payments</span></div>
+    </div>
+    <div class="card">
+      <b>On Point Meta Media</b>
+      <a class="url" href="https://onpointmetamedia.com">onpointmetamedia.com</a>
+      <p>Live radio station with a password-protected studio, signed sessions, and HMAC invite links that can be revoked at once.</p>
+      <div class="tags"><span>HMAC</span><span>Access Control</span><span>Sessions</span></div>
+    </div>
+    <div class="card">
+      <b>WhatsApp Remit Bot</b>
+      <span class="url">Private build</span>
+      <p>Payment chatbot that verifies HMAC-SHA256 signatures on WhatsApp and EcoCash webhooks before acting on them.</p>
+      <div class="tags"><span>Webhook Security</span><span>Fintech</span><span>Zod</span></div>
+    </div>
+    <div class="card">
+      <b>Gata Gadgets</b>
+      <a class="url" href="https://gatagadgets.store">gatagadgets.store</a>
+      <p>Point-of-sale and inventory system with bcrypt-hashed logins, separate staff and admin roles, and escaped output.</p>
+      <div class="tags"><span>bcrypt</span><span>Role-Based Access</span><span>XSS Prevention</span></div>
+    </div>
+    <div class="card">
+      <b>The Frontline</b>
+      <a class="url" href="https://thefrontlinezw.com">thefrontlinezw.com</a>
+      <p>News site with an editor dashboard secured by scrypt password hashing, signed httpOnly cookies and input validation.</p>
+      <div class="tags"><span>scrypt</span><span>Secure Cookies</span><span>Zod</span></div>
+    </div>
+    <div class="card">
+      <b>Global Social Affair</b>
+      <a class="url" href="https://global-social-affair.vercel.app">global-social-affair.vercel.app</a>
+      <p>Dating platform with scrypt-hashed accounts, timing-safe credential checks and parameterized database queries.</p>
+      <div class="tags"><span>Authentication</span><span>SQL Injection Prevention</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Tools &amp; Platforms</div>
+  <div class="chips">
+    <span>Node.js</span><span>TypeScript</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span>
+    <span>Supabase</span><span>Neon</span><span>Git &amp; GitHub</span><span>Vercel</span><span>Cloudflare R2</span>
+    <span>Twilio</span><span>LiveKit</span><span>Zod</span>
+  </div>
+</section>
+
+
+</body>
+</html>
