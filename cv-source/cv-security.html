@@ -15,9 +15,9 @@
   .role { font-weight: 700; color: #1d4ed8; font-size: 11pt; margin-left: 4px; }
   .contact { text-align: right; font-size: 9.5pt; line-height: 1.75; color: #4b5563; }
 
-  .summary { margin: 18px 0 16px; background: #eff3fe; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 12px 18px; font-size: 10pt; line-height: 1.6; }
+  .summary { margin: 14px 0 12px; background: #eff3fe; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 12px 18px; font-size: 10pt; line-height: 1.6; }
 
-  section { display: grid; grid-template-columns: 1.95in 1fr; gap: 0 18px; border-top: 1px solid #d1d5db; padding: 14px 0; break-inside: avoid; }
+  section { display: grid; grid-template-columns: 1.95in 1fr; gap: 0 18px; border-top: 1px solid #d1d5db; padding: 11px 0; break-inside: avoid; }
   .label { font-size: 7.5pt; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: #1d4ed8; padding-top: 3px; }
   .job + .job { margin-top: 14px; }
   .job-head { display: flex; justify-content: space-between; gap: 12px; }
@@ -43,10 +43,12 @@
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chips span { border: 1px solid #d1d5db; border-radius: 5px; padding: 3px 9px; font-size: 9pt; }
 
-  .edu + .edu { margin-top: 9px; }
+  .edu + .edu { margin-top: 6px; }
   .edu b { color: #111827; font-size: 10.3pt; }
   .edu div { font-size: 9pt; color: #6b7280; }
   .page-break { break-before: page; }
+  .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #e5e7eb; }
+  .certs .edu + .edu { margin-top: 0; }
   section.flow { break-inside: auto; }
   .job { break-inside: avoid; }
 </style>
@@ -56,7 +58,7 @@
 <header>
   <div>
     <h1>Joseph Dhliwayo</h1>
-    <div class="loc">Hamden, Connecticut, United States</div>
+    <div class="loc">Hamden, Connecticut, United States · Fluent English</div>
     <div class="role">Cybersecurity Engineer</div>
   </div>
   <div class="contact">
@@ -80,13 +82,13 @@
   <div>
     <div class="edu"><b>Master of Science in Cybersecurity</b><div>In progress · Hamden, Connecticut, United States</div></div>
     <div class="edu"><b>Bachelor of Science Honours in Information Systems</b><div>Completed · Zimbabwe</div></div>
+    <div class="certs">
     <div class="edu"><b>AWS Cloud Security</b><div>In progress · Amazon Web Services</div></div>
+    <div class="edu"><b>AWS Academy Graduate: Cloud Architecting</b><div>Amazon Web Services · Issued May 2026</div></div>
+    <div class="edu"><b>AWS Academy Graduate: Cloud Foundations</b><div>Amazon Web Services · Issued Dec 2025</div></div>
+    <div class="edu"><b>AWS Academy Graduate: Cloud Security Foundations</b><div>Amazon Web Services · Issued Dec 2025 · <a href="https://www.credly.com/users/joseph-dhliwayo.9b1246b0">Verify on Credly</a></div></div>
+    </div>
   </div>
-</section>
-
-<section>
-  <div class="label">Language</div>
-  <div class="edu"><b>English</b><div>Fluent, written and spoken</div></div>
 </section>
 
 <section>
@@ -175,7 +177,7 @@
   <div class="label">Tools &amp; Platforms</div>
   <div class="chips">
     <span>Node.js</span><span>TypeScript</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span>
-    <span>Supabase</span><span>Neon</span><span>Git &amp; GitHub</span><span>Vercel</span><span>Cloudflare R2</span>
+    <span>Supabase</span><span>Neon</span><span>Git &amp; GitHub</span><span>AWS</span><span>Vercel</span><span>Cloudflare R2</span>
     <span>Twilio</span><span>LiveKit</span><span>Zod</span>
   </div>
 </section>
