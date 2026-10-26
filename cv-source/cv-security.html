@@ -6,7 +6,7 @@
 <style>
   @page { size: Letter; margin: 0.5in 0.45in; }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 10pt/1.5 "Segoe UI", "Noto Sans", Arial, sans-serif; color: #3d4451; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font: 9.7pt/1.45 "Segoe UI", "Noto Sans", Arial, sans-serif; color: #3d4451; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { color: #1d4ed8; text-decoration: none; }
 
   header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding-bottom: 12px; border-bottom: 3px solid #1d4ed8; }
@@ -25,18 +25,18 @@
   .job-head span { color: #6b7280; font-size: 9pt; white-space: nowrap; }
   .org { color: #1d4ed8; font-weight: 700; font-size: 8.8pt; margin: 1px 0 5px; }
   ul { margin: 0; padding-left: 16px; }
-  li { margin: 2px 0; font-size: 9.6pt; }
+  li { margin: 1.5px 0; font-size: 9.3pt; }
 
   .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
   .skills b { display: block; color: #111827; font-size: 9.8pt; margin-bottom: 1px; }
-  .skills div { font-size: 9.2pt; line-height: 1.45; }
+  .skills div { font-size: 9pt; line-height: 1.4; }
 
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .card { border: 1px solid #d1d5db; border-top: 3px solid #1d4ed8; border-radius: 8px; padding: 10px 13px; break-inside: avoid; }
+  .card { border: 1px solid #d1d5db; border-top: 3px solid #1d4ed8; border-radius: 8px; padding: 8px 12px; break-inside: avoid; }
   .card b { color: #111827; font-size: 10.5pt; display: block; }
   .card .url { font-size: 8.8pt; color: #6b7280; }
   .card a.url, .card .url a { color: #1d4ed8; }
-  .card p { margin: 5px 0 7px; font-size: 9pt; color: #6b7280; line-height: 1.45; }
+  .card p { margin: 4px 0 0; font-size: 9pt; color: #6b7280; line-height: 1.45; }
   .tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tags span { background: #eff3fe; color: #1e40af; font-size: 7.6pt; font-weight: 700; padding: 3px 7px; border-radius: 4px; }
 
@@ -51,7 +51,9 @@
   .certs .edu + .edu { margin-top: 0; }
   .certs .wide { grid-column: 1 / -1; }
   section.flow { break-inside: auto; }
-  .job { break-inside: avoid; }
+  .job { break-inside: auto; }
+  li, .job-head, .org { break-inside: avoid; break-after: avoid-page; }
+  li { break-after: auto; }
 </style>
 </head>
 <body>
@@ -71,15 +73,16 @@
 </header>
 
 <div class="summary">
-  Cybersecurity engineer who builds and secures live web and mobile applications, completing an MSc in Cybersecurity
-  with AWS and Cisco security training. Hands-on experience securing authentication, payments, APIs and databases
-  for production platforms, including Pekugara, a housing app on the App Store and Google Play.
+  Cybersecurity engineer completing an MSc in Cybersecurity at Quinnipiac University, with a capstone, AURA, that uses
+  machine learning and AI to detect compromised and abusive accounts in real time. Backed by AWS and Cisco security
+  training and hands-on experience securing authentication, payments, APIs and databases for live platforms,
+  including Pekugara, a housing app on the App Store and Google Play.
 </div>
 
 <section>
   <div class="label">Education &amp; Certifications</div>
   <div>
-    <div class="edu"><b>Master of Science in Cybersecurity</b><div>In progress · Hamden, Connecticut, United States</div></div>
+    <div class="edu"><b>Master of Science in Cybersecurity</b><div>Quinnipiac University · In progress · Hamden, Connecticut · Capstone: AURA, AI-driven user risk analytics</div></div>
     <div class="edu"><b>Bachelor of Science Honours in Information Systems</b><div>Completed · Zimbabwe</div></div>
     <div class="certs">
     <div class="edu"><b>AWS Cloud Security</b><div>In progress · Amazon Web Services</div></div>
@@ -94,18 +97,29 @@
 <section>
   <div class="label">Security Skills</div>
   <div class="skills">
-    <div><b>Application security</b>Secure coding, input validation, output encoding, SQL injection and XSS prevention</div>
+    <div><b>Threat detection</b>Anomaly detection (Isolation Forest, scikit-learn), detection rules, alert correlation, real-time alerting</div>
+    <div><b>Application security</b>Secure coding, input validation, output encoding, SQL injection, XSS and CSRF prevention</div>
     <div><b>Authentication &amp; sessions</b>Password hashing (bcrypt, scrypt), signed tokens, httpOnly and SameSite cookies</div>
     <div><b>Cryptography</b>AES-256 encryption, HMAC-SHA256 signing, timing-safe comparison, TLS troubleshooting</div>
-    <div><b>Access control</b>PostgreSQL row-level security, role-based access, revocable signed invite links</div>
-    <div><b>API &amp; webhook security</b>Webhook signature verification, schema validation (Zod), secure payment APIs</div>
-    <div><b>Cloud &amp; secrets</b>Secrets management on Vercel, environment separation, isolated test databases</div>
+    <div><b>Access control &amp; config review</b>PostgreSQL row-level security, privileged function review, webhook signature checks</div>
+    <div><b>Cloud, privacy &amp; AI</b>AWS, secrets management, HMAC pseudonymisation, data minimisation, verified LLM output</div>
   </div>
 </section>
 
 <section class="flow">
   <div class="label">Experience</div>
   <div>
+    <div class="job">
+      <div class="job-head"><b>Capstone Project: AURA, AI-Driven User Risk Analytics</b><span>2026</span></div>
+      <div class="org">Quinnipiac University · MS Cybersecurity · Piloted on Pekugara</div>
+      <ul>
+        <li>Designed and built a system that detects compromised and abusive accounts by combining Isolation Forest anomaly detection with detection rules</li>
+        <li>The hybrid detector reached 0.87 F1 at a 0.09% false-positive rate across 10 test runs, about a fifth of the false alarms of rules alone</li>
+        <li>Built read-only database configuration checks that found 18 of 20 planted weaknesses with no false positives, and two real issues in a production codebase</li>
+        <li>Real-time alerts reach administrators by WhatsApp, SMS or email in a median 39 ms, with VPN, proxy and Tor detection</li>
+        <li>AI explains each alert from pseudonymised, minimised data; explanations not backed by evidence are rejected, and admins approve every action</li>
+      </ul>
+    </div>
     <div class="job">
       <div class="job-head"><b>Founder &amp; Lead Developer</b><span>2024 – Present</span></div>
       <div class="org">Pekugara · Hamden, United States</div>
@@ -120,12 +134,10 @@
       <div class="job-head"><b>Freelance Web Developer</b><span>2022 – Present</span></div>
       <div class="org">Global Website Solutions · Remote</div>
       <ul>
-        <li>Designed and built websites and business systems for clients in the US and Zimbabwe, applying secure-by-default practices on every project</li>
-        <li>Implemented login systems with salted password hashing (bcrypt, scrypt), HMAC-signed sessions checked with timing-safe comparison, and httpOnly, SameSite cookies</li>
+        <li>Built websites and business systems for clients in the US and Zimbabwe; implemented login systems with salted password hashing (bcrypt, scrypt), HMAC-signed sessions checked with timing-safe comparison, and httpOnly, SameSite cookies</li>
         <li>Prevented injection and cross-site scripting with parameterized SQL queries, Zod schema validation and HTML output escaping</li>
         <li>Verified HMAC-SHA256 webhook signatures for WhatsApp and EcoCash integrations so forged requests are rejected</li>
-        <li>Built role-based admin access and revocable, time-limited signed invite links for a live radio studio</li>
-        <li>Kept production secrets out of code using Vercel environment variables, and separated test and production databases</li>
+        <li>Built role-based admin access and revocable, time-limited signed invite links for a live radio studio, with secrets kept out of code</li>
       </ul>
     </div>
   </div>
@@ -135,40 +147,24 @@
   <div class="label">Selected Projects</div>
   <div class="cards">
     <div class="card">
-      <b>Pekugara</b>
-      <span class="url"><a href="https://pekugara.com">pekugara.com</a> · App Store &amp; Google Play</span>
-      <p>Housing app with encrypted mobile-money payments, row-level security on user data, and admin verification.</p>
-      <div class="tags"><span>AES-256</span><span>Row-Level Security</span><span>Payments</span></div>
-    </div>
-    <div class="card">
       <b>On Point Meta Media</b>
       <a class="url" href="https://onpointmetamedia.com">onpointmetamedia.com</a>
       <p>Live radio station with a password-protected studio, signed sessions, and HMAC invite links that can be revoked at once.</p>
-      <div class="tags"><span>HMAC</span><span>Access Control</span><span>Sessions</span></div>
     </div>
     <div class="card">
       <b>WhatsApp Remit Bot</b>
       <span class="url">Private build</span>
       <p>Payment chatbot that verifies HMAC-SHA256 signatures on WhatsApp and EcoCash webhooks before acting on them.</p>
-      <div class="tags"><span>Webhook Security</span><span>Fintech</span><span>Zod</span></div>
     </div>
     <div class="card">
       <b>Gata Gadgets</b>
       <a class="url" href="https://gatagadgets.store">gatagadgets.store</a>
       <p>Point-of-sale and inventory system with bcrypt-hashed logins, separate staff and admin roles, and escaped output.</p>
-      <div class="tags"><span>bcrypt</span><span>Role-Based Access</span><span>XSS Prevention</span></div>
     </div>
     <div class="card">
       <b>The Frontline</b>
       <a class="url" href="https://thefrontlinezw.com">thefrontlinezw.com</a>
       <p>News site with an editor dashboard secured by scrypt password hashing, signed httpOnly cookies and input validation.</p>
-      <div class="tags"><span>scrypt</span><span>Secure Cookies</span><span>Zod</span></div>
-    </div>
-    <div class="card">
-      <b>Global Social Affair</b>
-      <a class="url" href="https://global-social-affair.vercel.app">global-social-affair.vercel.app</a>
-      <p>Dating platform with scrypt-hashed accounts, timing-safe credential checks and parameterized database queries.</p>
-      <div class="tags"><span>Authentication</span><span>SQL Injection Prevention</span></div>
     </div>
   </div>
 </section>
@@ -176,9 +172,8 @@
 <section>
   <div class="label">Tools &amp; Platforms</div>
   <div class="chips">
-    <span>Node.js</span><span>TypeScript</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span>
-    <span>Supabase</span><span>Neon</span><span>Git &amp; GitHub</span><span>AWS</span><span>Vercel</span><span>Cloudflare R2</span>
-    <span>Twilio</span><span>LiveKit</span><span>Zod</span>
+    <span>Python</span><span>FastAPI</span><span>scikit-learn</span><span>pandas</span><span>Claude API</span><span>Node.js</span><span>TypeScript</span>
+    <span>Next.js</span><span>PostgreSQL</span><span>Supabase</span><span>Neon</span><span>AWS</span><span>Vercel</span><span>Git &amp; GitHub</span><span>Twilio</span>
   </div>
 </section>
 
