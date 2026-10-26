@@ -533,3 +533,10 @@ a:hover .mini-grid img:nth-child(even) { transform: translateY(4px) rotate(1deg)
 @media (max-width: 1200px) {
   .comp.side { grid-column: span 12; }
 }
+
+/* Contact: CV downloads */
+.cv-card { grid-column: span 6; scroll-margin-top: 24px; }
+.cv-card .cv-desc { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 760px) {
+  .cv-card { grid-column: span 12; }
+}
